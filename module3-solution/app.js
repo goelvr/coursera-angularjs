@@ -35,10 +35,6 @@ function NarrowItDownController(MenuSearchService) {
   narrowItDown.removeItem = function(itemIndex) {
     narrowItDown.found.splice(itemIndex, 1);
   }
-
-  narrowItDown.hasItems = function() {
-    return (narrowItDown.found && (narrowItDown.found.length > 0));
-  }
 }
 
 MenuSearchService.$inject = ['$http'];
