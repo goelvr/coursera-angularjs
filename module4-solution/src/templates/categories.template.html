@@ -1,0 +1,9 @@
+<a ui-sref="home">Home</a>
+
+<h3>Click on the Menu Categories below to list the menu items</h3>
+
+<ul>
+  <li ng-repeat="category in categoryList.categories">
+    <a ui-sref="items({categoryShortName: category.short_name})">{{ category.name }}</a>
+  </li>
+</ul>
