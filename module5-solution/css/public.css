@@ -113,6 +113,46 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
+/* Sign Up Page */
+#signup label {
+  display: inline-block;
+  width: 20em;
+  text-align: right;
+  margin-left: 10em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+}
+#signup input {
+  display: inline-block;
+  text-align: left;
+  color: black;
+}
+#signup span {
+  font-size: 0.8em;
+  color:red;
+}
+#signup button {
+  color: black;
+}
+#signup button[type=submit] {
+  font-weight: bold;
+}
+/* End - Sign Up Page */
+
+/* Info Page */
+#info label {
+  display: inline-block;
+  width: 20em;
+  text-align: right;
+  padding-right: 0.2em;
+  padding-bottom: 0.2em;
+}
+#info span {
+  display: inline-block;
+  width: 20em;
+  text-align: left;
+}
+/* End - Info Page */
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {

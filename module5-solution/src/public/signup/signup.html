@@ -1,0 +1,42 @@
+<div class="container">
+  <h2 class="text-center">Sign Up</h2>
+  &nbsp;
+  <form name="signupForm" novalidate>
+  <div class="row text-left" id="signup">
+    <div>
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" ng-required="true" ng-model="signupCtrl.user.firstName"></input>
+      <span ng-if="signupForm.firstName.$error.required && (signupCtrl.submitted || signupForm.firstName.$touched)">Please enter a value</span>
+    </div>
+    <div>
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" ng-required="true" ng-model="signupCtrl.user.lastName"></input>
+      <span ng-if="signupForm.lastName.$error.required && (signupCtrl.submitted || signupForm.lastName.$touched)">Please enter a value</span>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" ng-required="true" ng-model="signupCtrl.user.email"></input>
+      <span ng-if="signupForm.email.$invalid && (signupCtrl.submitted || signupForm.email.$touched)">Must be a valid email address</span>
+    </div>
+    <div>
+      <label for="phoneNo">Phone:</label>
+      <input type="text" id="phoneNo" name="phoneNo" placeholder="###-###-####" ng-required="true" ng-model="signupCtrl.user.phoneNo" pattern="(\d{3})-(\d{3})-(\d{4})"></input>
+      <span ng-if="signupForm.phoneNo.$invalid && (signupCtrl.submitted || signupForm.phoneNo.$touched)">Phone must be in the format ###-###-####</span>
+    </div>
+    <div>
+      <label for="favoriteMenuNumber">Favorite Menu Number:</label>
+      <input type="text" id="favoriteMenuNumber" name="favoriteMenuNumber" ng-required="true" ng-model="signupCtrl.user.favoriteMenuNumber" maxlength="5" capitalize></input>
+      <span ng-if="signupForm.favoriteMenuNumber.$error.required && (signupCtrl.submitted || signupForm.favoriteMenuNumber.$touched)">Please enter a value</span>
+      <span ng-if="signupCtrl.submitted && signupCtrl.menuItemInvalid">No such menu item exists</span>
+    </div>
+    &nbsp;
+    <div class="text-center">
+      <button type="submit" name="submit" ng-click="signupCtrl.submit(signupForm)">Submit</button>
+    </div>
+  </div>
+  </form>
+  &nbsp;&nbsp;
+  <div class="row text-center" ng-if="signupCtrl.completed">
+    Your information has been saved!
+  </div>
+</div>

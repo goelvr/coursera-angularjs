@@ -15,7 +15,6 @@ function MenuService($http, ApiPath) {
     });
   };
 
-
   service.getMenuItems = function (category) {
     var config = {};
     if (category) {
@@ -27,8 +26,15 @@ function MenuService($http, ApiPath) {
     });
   };
 
+  service.getMenuItem = function (menuItem) {
+    return $http.get(ApiPath + '/menu_items/' + menuItem + '.json')
+    .then(function(response) {
+      return response.data;
+    })
+    .catch(function(error) {
+      console.log("error getting menu item '" + menuItem + "': " + error.error);
+      return null;
+    });
+  }
 }
-
-
-
 })();

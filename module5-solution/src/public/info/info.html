@@ -1,0 +1,36 @@
+<div class="container">
+  <h2 class="text-center">My Info</h2>
+  &nbsp;
+  <div class="row text-center" id="info" ng-if="infoCtrl.user">
+    <div>
+      <label>First Name:</label>
+      <span>{{ infoCtrl.user.firstName }}</span>
+    </div>
+    <div>
+      <label>Last Name:</label>
+      <span>{{ infoCtrl.user.lastName }}</span>
+    </div>
+    <div>
+      <label>Email:</label>
+      <span>{{ infoCtrl.user.email }}</span>
+    </div>
+    <div>
+      <label>Phone:</label>
+      <span>{{ infoCtrl.user.phoneNo }}</span>
+    </div>
+    <div>
+      <label>Favorite Menu Number:</label>
+      <span>{{ infoCtrl.user.favoriteMenuNumber.toUpperCase() }}</span>
+    </div>
+    <div>
+      <img class="img-responsive" style="margin-left: 28em;" width="250" height="150" ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.user.favoriteMenuNumber.toUpperCase()}}.jpg" alt="{{infoCtrl.favoriteMenuName}}">
+    </div>
+    <div class="menu-item-description">
+      <h4 class="menu-item-title">{{infoCtrl.user.favoriteMenuName}}</h4>
+      <p class="menu-item-details">{{infoCtrl.user.favoriteMenuDesc}}</p>
+    </div>
+  </div>
+  <div class="row text-center" ng-if="!infoCtrl.user">
+    Not signed up yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </div>
+</div>
